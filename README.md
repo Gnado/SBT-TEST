@@ -2,7 +2,7 @@
 [maven]: http://maven.apache.org/
 [git]: http://git-scm.com/
 
-## Allure JUnit Example
+## Allure JUnit
 
 ### Getting Started
 
@@ -11,7 +11,7 @@ To run tests you need to install [maven][maven], [git][git] and [phantomjs][phan
 To generate Allure Report you should perform following steps:
 
 ```bash
-$ git clone git@github.com:allure-examples/allure-junit-example.git
+$ git clone
 $ mvn clean test
 $ mvn site
 ```
