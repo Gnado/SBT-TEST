@@ -1,29 +1,36 @@
+
+
+
 [phantomjs]: http://phantomjs.org/download.html
 [maven]: http://maven.apache.org/
 [git]: http://git-scm.com/
 
-## Allure JUnit
+## Тестовое задание Java
 
-### Getting Started
+### Дано
+Дан файл вида: 
+data file
+operand1;operand2;operation;result
+operand1;operand2;operation;result
+operand1;operand2;operation;result
+operand1;operand2;operation;result
 
-To run tests you need to install [maven][maven], [git][git] and [phantomjs][phantomjs].
+каждая строка описывает арифметическое действие. 
+·         operand1 и operand2 - операнды, целые числа
+·         operation - арифметическое действие + - / *
+·         result - результат операции operation над operand1 и operand2
+В файле могут содержаться любые значения полей
 
-To generate Allure Report you should perform following steps:
+### Требуется
 
-```bash
-$ git clone
-$ mvn clean test
-$ mvn site
-```
+·         Реализовать юнит (JUnit) тесты арифметических действий.
 
-To see a report, run `mvn jetty:run` and open `http://localhost:8080` in your browser
+·         Каждое действие должно выглядеть в отчете как отдельный тестовый сценарий
 
-**NOTE: required maven version 3.1.1 or above**
+·         Результатом выполнения должен быть Yandex.Allure отчет
 
-### More
+·         Операнды, операция и результат должны быть представлены в отчете как параметры теста
 
-* [Documentation](https://github.com/allure-framework/allure-core/wiki)
-* [Issue Tracking](https://github.com/allure-framework/allure-core/issues?labels=&milestone=&page=1&state=open)
-* Mailing list: [allure@yandex-team.ru](mailto:allure@yandex-team.ru)
-* Gitter chat room: [https://gitter.im/allure-framework/allure-core](https://gitter.im/allure-framework/allure-core)
-* StackOverflow tag: [Allure](http://stackoverflow.com/questions/tagged/allure)
+·         Проект должен быть оформлен как артефакт Maven
+
+·         Исходный код проекта должен быть выложен на github или bitbucket

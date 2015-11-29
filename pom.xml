@@ -4,13 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>ru.yandex.qatools.allure</groupId>
-        <artifactId>allure-examples-parent</artifactId>
-        <version>1.0</version>
-    </parent>
 
-    <artifactId>allure-junit-example</artifactId>
+    <groupId>ru.sbt</groupId>
+    <artifactId>SBT-TEST</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -18,8 +14,8 @@
         <aspectj.version>1.8.5</aspectj.version>
     </properties>
 
-    <name>Allure JUnit Example</name>
-    <description>Allure JUnit and WebDriver Usage Example</description>
+    <name>Allure JUnit SBT</name>
+    <description>Tests</description>
 
     <dependencies>
         <dependency>
