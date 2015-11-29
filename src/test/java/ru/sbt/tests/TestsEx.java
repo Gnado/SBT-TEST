@@ -29,28 +29,27 @@ public class TestsEx {
     public void testCalc(String Cond) throws Exception {
         System.out.println(Cond);
         String[] arrSrt = Cond.split(";");
-        assertTrue(Cond + "- не верные входные данные. Пераметры должны быть вида: operand1;operand2;operation;result", arrSrt.length == 4);
+        assertTrue(Cond + "- incorrect data. DataPool temp: operand1;operand2;operation;result", arrSrt.length == 4);
         String operand1 = arrSrt[0].trim();
         String operand2 = arrSrt[1].trim();
         String operation = arrSrt[2].trim();
         String result = arrSrt[3].trim();
         String operationTemp = "/*+-^";
 
-        assertTrue(operand1 + "- не является целым числом (operand1)", isNumber(operand1));
-        assertTrue(operand2 + "- не является целым числом (operand2)", isNumber(operand2));
-        assertTrue(operation + "- не верный оператор (operation)! Больше одного символа", 1==(operation.length()));
-        assertTrue(operation + "- не верный оператор (operation)! Выберете один из следующих символов"+operationTemp, (operationTemp.indexOf(operation) != -1));
-        assertTrue(result + "- не является целым числом (result)", isNumber(result));
+        assertTrue(operand1 + " - incorrect operand1 - NOT integer", isNumber(operand1));
+        assertTrue(operand2 + " - incorrect operand2 - NOT integer", isNumber(operand2));
+        assertTrue(operation + " - incorrect operation - more then 1 char", 1==(operation.length()));
+        assertTrue(operation + " -  incorrect operation - chose one"+operationTemp, (operationTemp.indexOf(operation) != -1));
+        assertTrue(result + " - incorrect result - NOT integer", isNumber(result));
 
         if (operation.equals("/")) {
-            assertFalse("Деление на ноль невозможно", 0==Integer.valueOf(operand2));
+            assertFalse("Division by zero", 0==Integer.valueOf(operand2));
         }
 
-        Object resultEx = eng.eval(operand1+operation+operand2);
-//        String strRes = resultEx.toString();
-//        System.out.println(strRes);
-        //assertEquals("Резутьтат не верный!",result, resultEx.toString());
-        assertTrue("Резутьтат не верный!", Integer.parseInt(result) == Integer.parseInt(resultEx.toString()));
+        Double d2 = new Double (eng.eval(operand1 + operation + operand2).toString());
+        Double res = new Double(result.toString());
+
+        assertTrue(result +" -incorrect result - must be " + d2.toString(), Double.compare(d2, res)==0);
 
     }
 
